@@ -15,7 +15,7 @@ uploadArchives {
             //设置插件的GAV参数
             pom.groupId = 'com.zq.sdklib'
             pom.artifactId = 'zqsdk'
-            pom.version = '1.0.0'
+            pom.version = rootProject.ext.android["versionName"]
             //文件发布到下面目录
             repository(url: uri('../repo'))
         }
@@ -29,5 +29,5 @@ publish {
     artifactId = 'zqsdk'
     publishVersion = rootProject.ext.android["versionName"]
     desc = 'zaiqiang plugin for android develop'
-    website = 'https://github.com/ziq358/ZQCustomViewLib'
+    website = 'https://github.com/ziq358/ZQSDK'
 }
