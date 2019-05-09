@@ -9,7 +9,11 @@ public class PluginImpl implements Plugin<Project> {
     void apply(Project project) {
 
         println "ZaiQiang PluginImpl -------"
-
+        //定义扩展属性
+        //project.extensions返回ExtensionContainer对象，
+        // project.extensions.create("Name", ExtensionClass)创建 extension,
+        // 按后面的使用来看，创建extension后会将其加入到ExtensionContainer对象中
+        ////创建扩展属性 ZQSDK，并将外部属性配置使用PluginExtension进行管理
         project.extensions.create('ZQSDK', PluginExtension, project)
         project.ZQSDK.extensions.create('Internal', InternalExtension)
         project.task('zqPrintTask', type: PrintTask)

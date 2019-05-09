@@ -3,6 +3,9 @@ apply from: "config.gradle"
 buildscript {
     
     repositories {
+        maven {
+            url './repo'
+        }
         google()
         jcenter()
         maven { url "https://dl.bintray.com/zaiqiangxiaohuli/anZhuo" }
@@ -18,6 +21,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url './repo'
+        }
         google()
         jcenter()
         maven { url "https://dl.bintray.com/zaiqiangxiaohuli/anZhuo" }
