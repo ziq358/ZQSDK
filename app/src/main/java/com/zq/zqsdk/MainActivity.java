@@ -1,13 +1,13 @@
 package com.zq.zqsdk;
 
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.ziq.base.dagger.component.AppComponent;
-import com.ziq.base.mvp.BaseActivity;
+import androidx.annotation.Nullable;
 
-public class MainActivity extends BaseActivity {
+import com.ziq.base.baserx.dagger.component.AppComponent;
+import com.ziq.base.mvp.MvpBaseActivity;
+
+public class MainActivity extends MvpBaseActivity {
 
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -29,4 +29,6 @@ public class MainActivity extends BaseActivity {
     public void initData(@Nullable Bundle savedInstanceState) {
 
     }
+
+
 }

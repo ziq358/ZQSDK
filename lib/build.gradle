@@ -1,6 +1,5 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
-apply plugin: 'com.novoda.bintray-release'
 dependencies {
     compile gradleApi()
     compile localGroovy()
@@ -8,6 +7,8 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+apply from: './bintrayUpload.gradle'
 
 uploadArchives {
     repositories {
@@ -22,12 +23,13 @@ uploadArchives {
     }
 }
 
-publish {
-    userOrg = 'zaiqiangxiaohuli'
-    repoName = 'anZhuo'
-    groupId = 'com.zq.sdklib'
-    artifactId = 'zqsdk'
-    publishVersion = rootProject.ext.android["versionName"]
-    desc = 'zaiqiang plugin for android develop'
-    website = 'https://github.com/ziq358/ZQSDK'
-}
+//apply plugin: 'com.novoda.bintray-release'
+//publish {
+//    userOrg = 'zaiqiangxiaohuli'
+//    repoName = 'anZhuo'
+//    groupId = 'com.zq.sdklib'
+//    artifactId = 'zqsdk'
+//    publishVersion = rootProject.ext.android["versionName"]
+//    desc = 'zaiqiang plugin for android develop'
+//    website = 'https://github.com/ziq358/ZQSDK'
+//}

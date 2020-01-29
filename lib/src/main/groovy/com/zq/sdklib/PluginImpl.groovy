@@ -8,7 +8,7 @@ import org.gradle.api.artifacts.ProjectDependency
 public class PluginImpl implements Plugin<Project> {
     void apply(Project project) {
 
-        println "ZaiQiang PluginImpl -------"
+        println "仔强 PluginImpl -------"
         //定义扩展属性
         //project.extensions返回ExtensionContainer对象，
         // project.extensions.create("Name", ExtensionClass)创建 extension,
@@ -18,7 +18,7 @@ public class PluginImpl implements Plugin<Project> {
         project.ZQSDK.extensions.create('Internal', InternalExtension)
         project.task('zqPrintTask', type: PrintTask)
 
-        project.task('zqPrintDependencies') << {
+        project.task('zqPrintDependencies').doLast {
             println "ZaiQiang Plugins=========="
             project.plugins.each {println " "+ it.toString()}
             println "Dependencies=========="
@@ -55,7 +55,7 @@ public class PluginImpl implements Plugin<Project> {
                 if(project.ZQSDK.baseLib){
                     println "baseLib版本$project.ZQSDK.baseLib.versionName"
                     project.dependencies.add("api",
-                            "com.ziq.base:base:$project.ZQSDK.baseLib.versionName")
+                            "com.zq.base:base:$project.ZQSDK.baseLib.versionName")
                 }
                 if(project.ZQSDK.customViewLib){
                     println "customViewLib版本$project.ZQSDK.customViewLib.versionName"
